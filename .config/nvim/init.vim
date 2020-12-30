@@ -2,7 +2,7 @@
 " vim-plug
 " ==============================================
 call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 Plug 'ap/vim-buftabline'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': './install --bin' }
@@ -13,7 +13,10 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'luochen1990/rainbow'
 Plug 'tpope/vim-unimpaired'
-Plug 'vim-scripts/AutoComplPop'
+"Plug 'vim-scripts/AutoComplPop'
+
+" CoC
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " ==============================================
 call plug#end()
 " ==============================================
@@ -27,7 +30,6 @@ set path=**
 set shortmess+=c
 set signcolumn=yes
 set updatetime=50
-inoremap jj <Esc><Esc>
 nnoremap <silent> <M-z> :set wrap!<CR>
 nnoremap <silent> <F4> :setlocal spell! spelllang=en_us<CR>
 nnoremap <silent> <M-x> :e ~/.config/nvim/init.vim<CR>
@@ -36,6 +38,7 @@ nnoremap <silent> <M-x> :e ~/.config/nvim/init.vim<CR>
 set mouse=a
 
 " Theme
+set termguicolors
 colorscheme gruvbox
 set background=dark
 
@@ -58,6 +61,9 @@ nnoremap <silent> <M-f> :Rg<CR>
 " vim-fugitive
 nnoremap <silent> <M-g> :Gstatus<CR>
 
+" CoC
+source ~/.config/nvim/coc.vim
+
 " Rainbow Parentheses
 let g:rainbow_active = 1
 
@@ -65,7 +71,7 @@ let g:rainbow_active = 1
 set clipboard=unnamedplus
 
 " Show linenumbers
-set number relativenumber
+set number
 
 " Show hidden characters
 set list listchars=tab:>-,trail:·,extends:>,precedes:<,eol:↵,nbsp:˽
@@ -74,29 +80,22 @@ set list listchars=tab:>-,trail:·,extends:>,precedes:<,eol:↵,nbsp:˽
 set splitbelow splitright
 
 " Proper tabs
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 
 " Set ruler
 set colorcolumn=80,100,120
-highlight ColorColumn ctermbg=236
 
 " Comments
-highlight Comment cterm=italic
+highlight Comment gui=italic
 
 " Visual mode
-highlight Visual cterm=NONE ctermfg=bg ctermbg=yellow
+highlight Visual gui=NONE guifg=bg guibg=orange
 
 " Spell check
-highlight SpellBad cterm=underline ctermfg=red
+highlight SpellBad gui=underline guifg=red
 
 " Search
 set nohlsearch
 set ignorecase
-
-" Better diff colors
-highlight DiffAdd    cterm=reverse ctermfg=darkgreen ctermbg=bg
-highlight DiffDelete cterm=reverse ctermfg=red       ctermbg=bg
-highlight DiffChange cterm=reverse ctermfg=yellow    ctermbg=bg
-highlight DiffText   cterm=reverse ctermfg=blue      ctermbg=bg
