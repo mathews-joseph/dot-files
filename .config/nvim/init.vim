@@ -13,10 +13,9 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'luochen1990/rainbow'
 Plug 'tpope/vim-unimpaired'
-"Plug 'vim-scripts/AutoComplPop'
 
 " CoC
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " ==============================================
 call plug#end()
 " ==============================================
@@ -26,6 +25,7 @@ set completeopt=menuone,longest
 set diffopt+=vertical
 set hidden
 set noswapfile
+set nowrap
 set path=**
 set shortmess+=c
 set signcolumn=yes
@@ -40,7 +40,7 @@ set mouse=a
 " Theme
 set termguicolors
 colorscheme gruvbox
-set background=dark
+highlight Normal guibg=0
 
 " Buftabline
 let g:buftabline_show = 1
@@ -74,7 +74,7 @@ set clipboard=unnamedplus
 set number
 
 " Show hidden characters
-set list listchars=tab:>-,trail:·,extends:>,precedes:<,eol:↵,nbsp:˽
+set list listchars=tab:>-,trail:·,extends:>,precedes:<
 
 " Proper split
 set splitbelow splitright
