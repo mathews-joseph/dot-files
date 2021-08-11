@@ -3,12 +3,9 @@
 " ==============================================
 call plug#begin('~/.vim/plugged')
 Plug 'gruvbox-community/gruvbox'
-Plug 'ap/vim-buftabline'
-Plug 'preservim/nerdtree'
-Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
 
 " CoC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -17,7 +14,7 @@ call plug#end()
 " ==============================================
 
 " Basics
-set completeopt=menuone,longest
+set completeopt=menuone,noselect
 set diffopt+=vertical
 set hidden
 set noswapfile
@@ -26,7 +23,7 @@ set path=**
 set shortmess+=c
 set signcolumn=yes
 set updatetime=150
-nnoremap <silent> <M-z> :set wrap!<CR>
+nnoremap <silent> <M-z> :setlocal wrap!<CR>
 nnoremap <silent> <F4> :setlocal spell! spelllang=en_us<CR>
 nnoremap <silent> <M-x> :e ~/.config/nvim/init.vim<CR>
 
@@ -37,23 +34,13 @@ set mouse=a
 set termguicolors
 colorscheme gruvbox
 
-" Buftabline
-let g:buftabline_show = 2
-let g:buftabline_indicators = 1
-
-" NERDTree
-nnoremap <silent> <M-e> :NERDTreeToggle<CR>
-nnoremap <silent> <M-v> :NERDTreeFind<CR>
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeShowHidden = 1
+" Netrw
+let g:netrw_liststyle = 3
 
 " CoC
 source ~/.config/nvim/coc.vim
 
-" Shared clipboard
-set clipboard=unnamedplus
-
-" Show linenumbers
+" Show line numbers
 set number
 
 " Show hidden characters

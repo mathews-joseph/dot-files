@@ -70,12 +70,20 @@ vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(
 command! -nargs=0 Format :call CocAction('format')
 
 " Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+command! -nargs=? Fold :call CocAction('fold', <f-args>)
 
 " Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+command! -nargs=0 OrganizeImports :call CocAction('runCommand', 'editor.action.organizeImport')
 
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline=%f\ %h%w%m%r%{coc#status()}%{get(b:,'coc_current_function','')}%=%-14.(%l,%c%)\ %P
+
+" coc-explorer
+nmap <silent> <M-e> :CocCommand explorer<CR>
+
+" coc-git
+nmap <silent> [h <Plug>(coc-git-prevchunk)
+nmap <silent> ]h <Plug>(coc-git-nextchunk)
+nmap <silent> <leader>hp <Plug>(coc-git-chunkinfo)

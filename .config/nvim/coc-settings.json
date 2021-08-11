@@ -1,0 +1,10 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": [],
+
+    "explorer.width": 30,
+    "explorer.file.showHiddenFiles": true,
+
+    "python.pythonPath": ".venv/bin/python",
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": ["-l 79"]
+}
