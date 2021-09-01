@@ -1,7 +1,7 @@
 " ==============================================
 " vim-plug
 " ==============================================
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 Plug 'gruvbox-community/gruvbox'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
@@ -19,10 +19,12 @@ set diffopt+=vertical
 set hidden
 set noswapfile
 set nowrap
-set path=**
+set path=.,,**
+set scrolloff=10
 set shortmess+=c
 set signcolumn=yes
 set updatetime=150
+set wildignore=*.pyc
 nnoremap <silent> <M-z> :setlocal wrap!<CR>
 nnoremap <silent> <F4> :setlocal spell! spelllang=en_us<CR>
 nnoremap <silent> <M-x> :e ~/.config/nvim/init.vim<CR>
@@ -56,6 +58,9 @@ set expandtab
 
 " Set ruler
 set colorcolumn=72,79,99,119
+
+" Set cursor line
+set cursorline
 
 " Comments
 highlight Comment gui=italic
