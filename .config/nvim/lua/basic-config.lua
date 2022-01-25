@@ -2,11 +2,11 @@
 vim.opt.completeopt = 'menuone,noselect'
 vim.opt.diffopt = vim.opt.diffopt + { 'vertical' }
 vim.opt.hidden = true
-vim.opt.swapfile = false
-vim.opt.wrap = false
 vim.opt.scrolloff = 10
 vim.opt.signcolumn = 'yes'
+vim.opt.swapfile = false
 vim.opt.updatetime = 150
+vim.opt.wrap = false
 
 -- Mouse
 vim.opt.mouse = 'a'
